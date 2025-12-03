@@ -4,7 +4,7 @@ from keras.callbacks import EarlyStopping, ReduceLROnPlateau
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 from .architectures import modelo_simple, modelo_avanzado, modelo_profundo
 
-def entrenar_todos(X_train, y_train, X_test, y_test, scaler, df, split_idx, ventana):
+def entrenar_todos(X_train, y_train, X_test, y_test, scaler, df, split_idx, ventana, price_col):
 
     modelos = {
         "Simple": modelo_simple(ventana),
@@ -54,7 +54,8 @@ def entrenar_todos(X_train, y_train, X_test, y_test, scaler, df, split_idx, vent
         "split_idx": split_idx,
         "VENTANA": ventana,
         "metricas": metricas,
-        "historias": historias
+        "historias": historias,
+        "price_col": price_col
     }, "datos_dashboard.save")
 
     return metricas
