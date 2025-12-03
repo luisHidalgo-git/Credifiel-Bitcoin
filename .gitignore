@@ -1,0 +1,6 @@
+pronostico_bitcoin_mejorado.py
+*.h5
+*.save
+*.csv
+__pycache__/
+venv
